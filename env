@@ -1,0 +1,18 @@
+# 请把配置文件env改为.env
+
+# IP地址及端口
+ip_address=0.0.0.0:5878
+#ip_address=127.0.0.1:5878  
+
+# https证书   
+cert_path=tls/cert.pem
+key_path=tls/key.rsa     
+
+# postgres数据库配置: DATABASE_URL=mysql://[user[:password]@]host/database_name
+DATABASE_URL=postgres://user:passwd@127.0.0.1:5432/elapse
+
+# 网址
+BASE_URL=//127.0.0.1:5878/
+
+# 日志记录模式：Off,Error,Warn,Info,Debug,Trace
+RUST_LOG=Debug
