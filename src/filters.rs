@@ -1,5 +1,6 @@
-use warp::Filter;
+use crate::routes::article_route;
 use crate::routes::home_route;
+use warp::Filter;
 
 pub fn all_routes() -> impl warp::Filter<Extract = impl warp::Reply, Error = warp::Rejection> + Clone
 {
@@ -10,7 +11,8 @@ pub fn all_routes() -> impl warp::Filter<Extract = impl warp::Reply, Error = war
 
     let dir = warp::path("static").and(warp::fs::dir("./static"));
     let home = home_route::index();
+    let article = article_route::list();
 
-    let routes = home.or(dir).or(favicon);
+    let routes = home.or(dir).or(favicon).or(article);
     routes
 }

@@ -9,7 +9,11 @@ mod handlers;
 mod models;
 mod pager;
 mod routes;
+mod schema;
 mod template;
+
+#[macro_use]
+extern crate diesel;
 
 #[tokio::main]
 async fn main() {
