@@ -2,9 +2,6 @@
 <html>
 
 <head>
-	<title>
-		<?= $detail->title ?? '技术学习页（Learn）' ?>
-	</title>
 	{{#if seo_title}}
 	<title>{{seo_title}}</title>
 	{{~^~}}
@@ -43,7 +40,7 @@
 			<nav id="nav">
 				<ul>
 					<li><a href="{{base_url}}">Home</a></li>
-					<li>
+					<!-- <li>
 						<a href="javascript:;">服务器</a>
 						<ul>
 							<li><a href="javascript:;">Windows</a></li>
@@ -57,10 +54,11 @@
 								</ul>
 							</li>
 						</ul>
-					</li>
-					<li><a href="<?= site_url('article/index') ?>" class="button">Rust</a></li>
-					<li><a href="javascript:;">PHP</a></li>
-					<li><a href="javascript:;">登錄</a></li>
+					</li> -->
+					<li><a href="javascript:;">时事新闻</a></li>
+
+					<li><a href="{{base_url}}article/index" class="button">技术文章</a></li>
+					<!-- <li><a href="javascript:;">登錄/注册</a></li> -->
 				</ul>
 			</nav>
 		</header>

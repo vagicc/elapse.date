@@ -13,7 +13,7 @@ pub async fn detail(id: i32)-> std::result::Result<impl Reply, Rejection>  {
     }
 
     let article = article.unwrap();
-    let seo_title = article.seo_title.clone();
+    let seo_title = article.title.clone();
     let seo_keyword = article.seo_keywords.clone();
     let seo_description = article.seo_description.clone();
 
