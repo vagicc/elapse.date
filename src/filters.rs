@@ -1,4 +1,5 @@
 use crate::routes::article_route;
+use crate::routes::demo_redirect_r;
 use crate::routes::home_route;
 use warp::Filter;
 
@@ -13,6 +14,8 @@ pub fn all_routes() -> impl warp::Filter<Extract = impl warp::Reply, Error = war
     let home = home_route::index();
     let article = article_route::list();
 
-    let routes = home.or(dir).or(favicon).or(article);
+    let demo = demo_redirect_r::index();
+
+    let routes = home.or(dir).or(favicon).or(article).or(demo);
     routes
 }

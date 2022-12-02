@@ -1,5 +1,4 @@
 use crate::common::get_env;
-use warp::Filter;
 
 mod common;
 mod db;
