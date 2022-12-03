@@ -21,10 +21,10 @@ CREATE TABLE article(
     "create" bigint DEFAULT NULL,
     "last_time" TIMESTAMP WITHOUT time ZONE DEFAULT clock_timestamp()
 );
-CREATE INDEX idx_article_title ON article USING btree(title);
-CREATE INDEX idx_article_category_id ON article USING btree(category_id);
-CREATE INDEX idx_article_available ON article USING btree(available);
-CREATE INDEX idx_article_user_id ON article USING btree(user_id);
+CREATE INDEX idx_article_title ON article (title);
+CREATE INDEX idx_article_category_id ON article (category_id);
+CREATE INDEX idx_article_available ON article (available);
+CREATE INDEX idx_article_user_id ON article (user_id);
 
 COMMENT ON TABLE article IS '文章表';
 COMMENT ON COLUMN article.title IS '标题';
@@ -71,8 +71,8 @@ CREATE TABLE article_category(
     "create_time" TIMESTAMP WITHOUT time ZONE DEFAULT clock_timestamp()
 );
 
-CREATE INDEX idx_article_category_category ON article_category USING btree(category);
-CREATE INDEX idx_article_category_order_by ON article_category USING btree(order_by);
+CREATE INDEX idx_article_category_category ON article_category (category);
+CREATE INDEX idx_article_category_order_by ON article_category (order_by);
 
 COMMENT ON TABLE article_category IS '文章分类表';
 COMMENT ON COLUMN article_category.id IS '文章分类ID';
@@ -107,7 +107,7 @@ CREATE TABLE "column"(
     "create_time" TIMESTAMP WITHOUT time ZONE DEFAULT clock_timestamp()
 );
 
-CREATE INDEX idx_column_title ON "column" USING btree(title);
+CREATE INDEX idx_column_title ON "column" (title);
 
 COMMENT ON TABLE "column" IS '文章专栏表';
 COMMENT ON COLUMN "column".id IS '文章专栏ID';
